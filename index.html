@@ -30,8 +30,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Manrope:wght@200;300;400;500;600;700;800&family=Open+Sans:wght@400;600;700;800&family=Work+Sans:wght@100;200;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Manrope:wght@200;300;400;500;600;700;800&family=Open+Sans:wght@400;600;700;800&family=Work+Sans:wght@100;200;400;500;600;700;800&display=swap"
       rel="stylesheet"
+    />
+
+    <!-- font awesome cdn link -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Yg3GRvXTWq3m4pgYXTHj7rr7SM6tqQ6E+F2l5Ci9oEHiRjyHmQ/2o7P0PYdN1K3iRe3EWeF1m4BKJ6aXto1lA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
 
     <!-- tailwind custom styles -->
@@ -42,8 +52,8 @@
           extend: {
             colors: {
               clifford: "#da373d",
-              "bike-primary": "#E76F51",
-              "bike-primary-bg": "#E76F511A",
+              "fruit-primary": "#F85559",
+              "fruit-primary-bg": "#F85559",
             },
           },
         },
@@ -52,22 +62,627 @@
 
     <!-- custom styles -->
     <style>
-      .font-manrope {
-        font-family: "Manrope", sans-serif;
+      .font-Lato {
+        font-family: "Lato", sans-serif;
       }
     </style>
   </head>
-  <body class="font-manrope">
+  <body class="font-Lato">
     <header>
-      <!-- nav bar -->
-
-      <!-- banner -->
-
+      <!-- navbar -->
       <section class="md:container md:mx-auto">
-        <p>hello</p>
+        <div
+          class="navbar lg:bg-fruit-primary lg:rounded-full sm:rounded-none sm:bg-white"
+        >
+          <div class="navbar-start hidden lg:flex text-white">
+            <ul class="menu menu-horizontal px-1">
+              <li><a>Home</a></li>
+              <li><a>About Us</a></li>
+              <li><a>Shop</a></li>
+              <li><a>All Fruits</a></li>
+            </ul>
+          </div>
+
+          <div class="navbar-center">
+            <div class="flex gap-5">
+              <div class="justify-center">
+                <img src="./images/logo.png" alt="" />
+              </div>
+              <div class="flex items-center justify-center">
+                <p class="text-4xl text-center font-bold text-white">
+                  Fruit Burst
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="navbar-end">
+            <div class="dropdown">
+              <label tabindex="0" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </label>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li><a>Home</a></li>
+                <li><a>About Us</a></li>
+                <li><a>Shop</a></li>
+                <li><a>All Fruits</a></li>
+              </ul>
+            </div>
+            <div class="relative hidden md:block">
+              <input
+                class="block w-full py-2 pl-3 pr-10 leading-tight rounded-full bg-white border border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                type="search"
+                placeholder="Search here"
+              />
+              <div class="absolute inset-y-0 right-0 flex items-center px-2">
+                <button
+                  class="focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                >
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Banner Section -->
+      <section class="md:container md:mx-auto">
+        <div class="carousel w-full mt-14 rounded-2xl">
+          <div id="slide1" class="carousel-item relative w-full">
+            <!-- first slide -->
+
+            <div
+              class="hero h-[600px] rounded-2xl"
+              style="background-image: url('./images/banner1.png')"
+            >
+              <div class="hero-overlay bg-opacity-60"></div>
+              <div class="hero-content text-center text-neutral-content">
+                <div class="max-w-md">
+                  <h1 class="mb-5 text-5xl font-bold">
+                    Exotic tastes at your doorstep
+                  </h1>
+                  <p class="mb-5">We supply highly quality organic products</p>
+                  <button
+                    class="btn bg-fruit-primary-bg text-white border-none"
+                  >
+                    Shop Now
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+            >
+              <a href="#slide4" class="btn btn-circle">❮</a>
+              <a href="#slide2" class="btn btn-circle">❯</a>
+            </div>
+          </div>
+          <div id="slide2" class="carousel-item relative w-full">
+            <!-- second slide -->
+
+            <div
+              class="hero h-[600px] rounded-2xl"
+              style="background-image: url('./images/banner2.png')"
+            >
+              <div class="hero-overlay bg-opacity-60"></div>
+              <div class="hero-content text-center text-neutral-content">
+                <div class="max-w-md">
+                  <h1 class="mb-5 text-5xl font-bold">
+                    Exotic tastes at your doorstep
+                  </h1>
+                  <p class="mb-5">We supply highly quality organic products</p>
+                  <button
+                    class="btn bg-fruit-primary-bg text-white border-none"
+                  >
+                    Shop Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+            >
+              <a href="#slide1" class="btn btn-circle">❮</a>
+              <a href="#slide3" class="btn btn-circle">❯</a>
+            </div>
+          </div>
+          <div id="slide3" class="carousel-item relative w-full">
+            <!-- third slide -->
+
+            <div
+              class="hero h-[600px] rounded-2xl"
+              style="background-image: url('./images/banner3.png')"
+            >
+              <div class="hero-overlay bg-opacity-60"></div>
+              <div class="hero-content text-center text-neutral-content">
+                <div class="max-w-md">
+                  <h1 class="mb-5 text-5xl font-bold">
+                    Exotic tastes at your doorstep
+                  </h1>
+                  <p class="mb-5">We supply highly quality organic products</p>
+                  <button
+                    class="btn bg-fruit-primary-bg text-white border-none"
+                  >
+                    Shop Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+            >
+              <a href="#slide2" class="btn btn-circle">❮</a>
+              <a href="#slide4" class="btn btn-circle">❯</a>
+            </div>
+          </div>
+          <div id="slide4" class="carousel-item relative w-full">
+            <!-- fourth slide -->
+
+            <div
+              class="hero h-[600px] rounded-2xl"
+              style="background-image: url('./images/banner4.png')"
+            >
+              <div class="hero-overlay bg-opacity-60"></div>
+              <div class="hero-content text-center text-neutral-content">
+                <div class="max-w-md">
+                  <h1 class="mb-5 text-5xl font-bold">
+                    Exotic tastes at your doorstep
+                  </h1>
+                  <p class="mb-5">We supply highly quality organic products</p>
+                  <button
+                    class="btn bg-fruit-primary-bg text-white border-none"
+                  >
+                    Shop Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+            >
+              <a href="#slide3" class="btn btn-circle">❮</a>
+              <a href="#slide1" class="btn btn-circle">❯</a>
+            </div>
+          </div>
+        </div>
       </section>
     </header>
-    <main class="md:container md:mx-auto"></main>
+    <main class="md:container md:mx-auto">
+      <!-- Deal of the day -->
+      <section class="mt-40">
+        <div
+          class="flex flex-col lg:flex-row justify-between lg:justify-between space-x-0 sm:space-x-4"
+        >
+          <div class="space-y-4">
+            <h2 class="text-4xl font-extrabold text-center lg:text-left">
+              Deal of the day
+            </h2>
+
+            <p class="text-center lg:text-left">
+              Contrary to popular belief, is not simply random text. It has
+              roots in a piece of classical <br />
+              Latin literature from 45 BC, making it over 2000 years old.
+            </p>
+          </div>
+
+          <div class="flex justify-center lg:justify-end">
+            <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
+              <div class="flex flex-col">
+                <span class="countdown font-mono text-5xl">
+                  <span style="--value: 15"></span>
+                </span>
+                days
+              </div>
+              <div class="flex flex-col">
+                <span class="countdown font-mono text-5xl">
+                  <span style="--value: 10"></span>
+                </span>
+                hours
+              </div>
+              <div class="flex flex-col">
+                <span class="countdown font-mono text-5xl">
+                  <span style="--value: 24"></span>
+                </span>
+                min
+              </div>
+              <div class="flex flex-col">
+                <span class="countdown font-mono text-5xl">
+                  <span style="--value: 52"></span>
+                </span>
+                sec
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- card of all fruits -->
+
+      <section class="mt-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <!-- first review -->
+          <div class="card bg-base-100 shadow-xl">
+            <figure>
+              <img class="w-18" src="/images/fruit6.png" alt="Shoes" />
+            </figure>
+            <div class="card-body">
+              <p class="text-center">12.90$ - 18.85$</p>
+
+              <hr class="w-60 mx-auto my-6" />
+              <p class="text-center text-base">Apple</p>
+
+              <div
+                class="rating rating-md rating-half justify-center mt-2 mb-2 custom-star-color"
+              >
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="rating-hidden"
+                  value=""
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="1"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="2"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="3"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="4"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="5"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="6"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="7"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="8"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="9"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="10"
+                />
+              </div>
+
+              <div class="card-actions justify-center">
+                <a href="" class="text-fruit-primary"> Details</a>
+              </div>
+            </div>
+          </div>
+          <!-- second review -->
+          <div class="card bg-base-100 shadow-xl">
+            <figure>
+              <img class="w-36" src="/images/fruit7.png" alt="Shoes" />
+            </figure>
+            <div class="card-body">
+              <p class="text-center">12.90$ - 18.85$</p>
+
+              <hr class="w-60 mx-auto my-6" />
+              <p class="text-center text-base">Apple</p>
+
+              <div
+                class="rating rating-md rating-half justify-center mt-2 mb-2 custom-star-color"
+              >
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="rating-hidden"
+                  value=""
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="1"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="2"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="3"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="4"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="5"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="6"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="7"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="8"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="9"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="10"
+                />
+              </div>
+
+              <div class="card-actions justify-center">
+                <a href="" class="text-fruit-primary"> Details</a>
+              </div>
+            </div>
+          </div>
+          <!-- Third review -->
+          <div class="card bg-base-100 shadow-xl">
+            <figure>
+              <img class="w-36" src="/images/fruit8.png" alt="Shoes" />
+            </figure>
+            <div class="card-body">
+              <p class="text-center">12.90$ - 18.85$</p>
+
+              <hr class="w-60 mx-auto my-6" />
+              <p class="text-center text-base">Apple</p>
+
+              <div
+                class="rating rating-md rating-half justify-center mt-2 mb-2 custom-star-color"
+              >
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="rating-hidden"
+                  value=""
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="1"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="2"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="3"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="4"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="5"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="6"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="7"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="8"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="9"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="10"
+                />
+              </div>
+
+              <div class="card-actions justify-center">
+                <a href="" class="text-fruit-primary"> Details</a>
+              </div>
+            </div>
+          </div>
+          <!-- fourth review -->
+          <div class="card bg-base-100 shadow-xl">
+            <figure>
+              <img class="w-36" src="/images/fruit9.png" alt="Shoes" />
+            </figure>
+            <div class="card-body">
+              <p class="text-center">12.90$ - 18.85$</p>
+
+              <hr class="w-60 mx-auto my-6" />
+              <p class="text-center text-base">Apple</p>
+
+              <div
+                class="rating rating-md rating-half justify-center mt-2 mb-2 custom-star-color"
+              >
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="rating-hidden"
+                  value=""
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="1"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="2"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="3"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="4"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="5"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="6"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="7"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="8"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-1"
+                  value="9"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="bg-fruit-primary-bg mask mask-star-2 mask-half-2"
+                  value="10"
+                />
+              </div>
+
+              <div class="card-actions justify-center">
+                <a href="" class="text-fruit-primary"> Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-10 flex justify-center">
+        <button class="btn bg-fruit-primary-bg text-white border-none">
+          Shop All
+        </button>
+      </section>
+    </main>
     <footer class="footer p-10 bg-neutral text-neutral-content"></footer>
   </body>
 </html>
